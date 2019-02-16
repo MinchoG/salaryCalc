@@ -17,6 +17,7 @@ body {
   background-color:whitesmoke;
   border-bottom: 2px ridge black;
   vertical-align: middle;
+  
 }
 
 .Header span {
@@ -27,4 +28,9 @@ display: inline-block;
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.displayPool p label {
+  color: salmon;
+  font-size: 18px;
 }
