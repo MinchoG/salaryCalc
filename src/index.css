@@ -6,10 +6,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
 }
 
 .Header {
-  margin:0;
+  margin:0 0 20px 0;
   padding: 0;
   width: 100%;
   min-height: 40px;
@@ -17,20 +18,54 @@ body {
   background-color:whitesmoke;
   border-bottom: 2px ridge black;
   vertical-align: middle;
+}
+
+.displayPool p {
+margin:0;
+padding:5px;
+}
+
+table {
+ margin-top: 15px;
+ border-spacing: 0.5rem;
+ border-collapse: collapse;
+}
+
+table tr td {
+  border: 2px solid gray;
+  height: 26px;
+  min-width: 100px;
+  padding: 1px;
+}
+
+form input {
+  margin: 0 16px 0 15px;
+  width: 80px;
+  font-size: 18px;
   
 }
 
-.Header span {
-margin: 11px 0 0 30px;
-display: inline-block;
+button {
+  font-size: 20px;
+  margin: 0 0 0 25px;
 }
+
+.displayPool label {
+  padding: 20px;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.displayPool p label {
-  color: salmon;
-  font-size: 18px;
+.displayPool label {
+  color: rgb(57, 105, 194);
+  font-weight: bold;
+}
+
+.bottom {
+  margin: 0;
+  padding: 5px;
 }
