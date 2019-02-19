@@ -4,18 +4,26 @@ import Table from './Table';
 class Form extends Component {
   state = {
     displayTable: false,
-    salary: '',
-    exp: ''
+    salary: 0,
+    exp: 0,
+    errors: {
+      salary: 'Invalid value',
+      exp: 'Invalid value'
+    }
   };
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  handleClick() {
-    this.setState({
-      displayTable: true
-    });
+  handleClick(event) {
+    if (/^[0-9]+$/g.test(this.state.salary) && /^[0-9]+$/g.test(this.state.exp)) {
+      this.setState({
+        displayTable: true
+      });
+    } else {
+      event.preventDefault();
+    }
   }
 
   render() {
@@ -34,7 +42,11 @@ class Form extends Component {
               placeholder="amount"
               value={this.state.salary}
               onChange={e => this.handleChange(e)}
+              required="required"
+              pattern="[0-9]*"
+              title="Please enter a valid number"
             />
+            <span className="err1">{!/^[0-9]+$/g.test(this.state.salary) && this.state.errors.salary}</span>
           </label>
 
           <label>
@@ -46,9 +58,15 @@ class Form extends Component {
               placeholder="amount"
               value={this.state.exp}
               onChange={e => this.handleChange(e)}
+              required="required"
+              pattern="[0-9]*"
+              title="Please enter a valid number"
+              min="1"
+              max="35"
             />
+            <span className="err2">{!/^[0-9]+$/g.test(this.state.exp) && this.state.errors.exp}</span>
           </label>
-          <button type="button" onClick={() => this.handleClick()}>
+          <button type="button" onClick={event => this.handleClick(event)}>
             Calc!
           </button>
           <div className="displayPool">{displayTable && <Table salary={salary} exp={exp} />}</div>
